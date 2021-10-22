@@ -4,7 +4,8 @@ const { width, height } = Dimensions.get('window')
 
 export const SIZE = {
     //App dimensions
-    padding: 15
+    padding: 15,
+    h2:20
 }
 
 export const COLORS = {

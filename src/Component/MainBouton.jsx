@@ -3,9 +3,9 @@ import { View, Text } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { COLORS } from '../Theme'
 
-const MainBouton = () => {
+const MainBouton = ({title,  onPress}) => {
     return (
-       <TouchableOpacity style={{
+       <TouchableOpacity onPress={onPress} style={{
            width:'70%',
            height: 62,
            alignSelf:'center',
@@ -13,10 +13,10 @@ const MainBouton = () => {
            alignItems:'center',
            backgroundColor: COLORS.primary,
            borderRadius: 15,
-           marginTop: 50
+           marginTop: 50,
        }}>
-           <Text>Login</Text>
-       </TouchableOpacity>
+           <Text style={{color:COLORS.white, fontWeight:'bold'}}>{title}</Text>
+       </TouchableOpacity >
     )
 }
 

@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { View, Text, TouchableOpacity, ImageBackground, StyleSheet, Dimensions, Image } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler'
 import { SIZE, images, icons, COLORS } from '../Theme'
 import MainButton from '../Component/MainBouton';
+import { AuthProvider } from '../context/AuthContext';
 
 const { width, height } = Dimensions.get('screen')
 
 const Login = ({ navigation }) => {
+    const {isLoging, setIsLoging} =  useContext(AuthProvider)
     return (
         <ImageBackground source={images.LoginBkg} style={styles.constainer}>
 
@@ -30,7 +32,7 @@ const Login = ({ navigation }) => {
                         <Text style={styles.forget}>Mot de passe oublié ?</Text>
                     </TouchableOpacity>
                 </View>
-                <MainButton />
+                <MainButton onPress={()=>setIsLoging(true)} title='Login'/>
                 <TouchableOpacity onPress={() => navigation.navigate('Register')}>
                     <Text style={styles.newAcc}>Crée un nouveau compte</Text>
                 </TouchableOpacity>

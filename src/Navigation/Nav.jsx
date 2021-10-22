@@ -1,16 +1,14 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import {createStackNavigator} from '@react-navigation/stack';
-import Home from '../Screen/Home';
+import React, { useContext } from 'react'
+import { AuthProvider } from '../context/AuthContext'
+import AuthNav from './AuthNav'
+import BottomNav from './BottomNav'
+import MainNav from './MainNav'
 
-const Tabs = createStackNavigator();
 
 const Nav = () => {
-
+    const { isLoging } = useContext(AuthProvider)
     return (
-       <Tabs.Navigator>
-           <Tabs.Screen name='Home' component={Home}/>
-       </Tabs.Navigator>
+         isLoging?(<BottomNav />) : (<AuthNav />)
     )
 }
 

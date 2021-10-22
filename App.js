@@ -1,17 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import React,{useState} from 'react';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthNav from './src/Navigation/AuthNav';
 import Nav from './src/Navigation/Nav';
+import AuthContext, { AuthProvider } from './src/context/AuthContext'
 
 
 export default function App() {
-  const [isLoging, setIsLoging] = useState(false)
   return (
     <NavigationContainer>
-      {isLoging? (<Nav/>) : (<AuthNav/>)}
+      <AuthContext>
+        <Nav/>
+      </AuthContext>
     </NavigationContainer>
   );
 }
