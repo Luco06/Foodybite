@@ -25,12 +25,15 @@ const Login = ({ navigation }) => {
                     <TextInput placeholder='Password' secureTextEntry placeholderTextColor='white' style={styles.textinput} />
                 </View>
 
-                <View style={{alignItems:"flex-end"}}>
-                    <TouchableOpacity onPress={()=>navigation.navigate('ForgetPassword')}>
-                        <Text style={{color: COLORS.white}}>Forget password ?</Text>
+                <View style={{ alignItems: "flex-end" }}>
+                    <TouchableOpacity onPress={() => navigation.navigate('ForgetPassword')}>
+                        <Text style={styles.forget}>Mot de passe oublié ?</Text>
                     </TouchableOpacity>
                 </View>
-                <MainButton/>
+                <MainButton />
+                <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+                    <Text style={styles.newAcc}>Crée un nouveau compte</Text>
+                </TouchableOpacity>
             </View>
 
         </ImageBackground>
@@ -49,14 +52,16 @@ const styles = StyleSheet.create({
         width: width,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 20
     },
     logoImage: {
         width: width / 2,
+        marginTop: 40
 
     },
     formContainer: {
-        paddingHorizontal: SIZE.padding
+        paddingHorizontal: SIZE.padding,
+        marginTop: "auto",
+        marginBottom: "auto"
 
     },
     input: {
@@ -76,6 +81,14 @@ const styles = StyleSheet.create({
         flex: 1,
         height: '100%',
         color: 'white',
+    },
+    forget: {
+        color: COLORS.white
+    },
+    newAcc: {
+        color: COLORS.white,
+        textAlign: 'center',
+        marginTop:100,
+        textDecorationLine: 'underline'
     }
-
 })

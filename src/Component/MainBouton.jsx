@@ -6,14 +6,16 @@ import { COLORS } from '../Theme'
 const MainBouton = () => {
     return (
        <TouchableOpacity style={{
-           width:'100%',
+           width:'70%',
            height: 62,
+           alignSelf:'center',
            justifyContent:'center',
            alignItems:'center',
            backgroundColor: COLORS.primary,
-           borderRadius: 15
+           borderRadius: 15,
+           marginTop: 50
        }}>
-           <Text>Hello</Text>
+           <Text>Login</Text>
        </TouchableOpacity>
     )
 }
