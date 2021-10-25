@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { View, Text, StyleSheet, FlatList, TextInput, Image } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Restaurant, FilterRestaurant } from '../../data'
+import { Restaurant, FilterRestaurant, Friend } from '../../data'
 import MainBouton from '../Component/MainBouton'
 import { AuthProvider } from '../context/AuthContext'
 import { COLORS, icons, SIZE } from '../Theme'
@@ -57,7 +57,6 @@ const Home = ({ navigation }) => {
                 keyExtractor={item => `${item.id}`}
                 showsHorizontalScrollIndicator={false}
                 renderItem={({ item }) => {
-                    console.log(item.img)
                     return (
                         <TouchableOpacity style={styles.DivCategory}>
                             <Image style={styles.ImgCategory} source={{ uri: item.img }} />
@@ -68,6 +67,24 @@ const Home = ({ navigation }) => {
             />
         )
 
+    }
+
+    function RenderFriend(){
+        return(
+            <FlatList
+            data={Friend}
+            horizontal
+            keyExtractor={item => `${item.id}`}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item }) => {
+                return(
+                <TouchableOpacity style={styles.DivCategory}>
+                    <Image style={styles.ImgCategory} source={{uri: item.img}}/>
+                </TouchableOpacity>
+                )
+            }}
+            />
+        )
     }
     //MainReturn
     return (
@@ -92,6 +109,13 @@ const Home = ({ navigation }) => {
                         </View>
                         {/* Category*/}
                         {RenderCategory()}
+
+                        <View style={styles.SwipeElement}>
+                            <Text style={styles.title}>Amis</Text>
+                            <Text>Voirs tous (60)</Text>
+                        </View>
+                        {/*Friends */}
+                        {RenderFriend()}
                     </View>
                 }
                 ListFooterComponent={
