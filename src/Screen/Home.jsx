@@ -69,20 +69,20 @@ const Home = ({ navigation }) => {
 
     }
 
-    function RenderFriend(){
-        return(
+    function RenderFriend() {
+        return (
             <FlatList
-            data={Friend}
-            horizontal
-            keyExtractor={item => `${item.id}`}
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item }) => {
-                return(
-                <TouchableOpacity style={styles.DivCategory}>
-                    <Image style={styles.ImgCategory} source={{uri: item.img}}/>
-                </TouchableOpacity>
-                )
-            }}
+                data={Friend}
+                horizontal
+                keyExtractor={item => `${item.id}`}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item }) => {
+                    return (
+                        <TouchableOpacity style={styles.DivFriend}>
+                            <Image style={styles.ImgFriend} source={{ uri: item.img }} />
+                        </TouchableOpacity>
+                    )
+                }}
             />
         )
     }
@@ -222,5 +222,16 @@ const styles = StyleSheet.create({
     {
         fontSize: SIZE.h2,
         fontWeight: 'bold'
+    },
+    DivFriend: {
+        width: 62,
+        height: 62,
+    },
+    ImgFriend: {
+        borderRadius: 1000,
+        flex: 1,
+        marginRight: 10,
+        
+
     }
 })
