@@ -60,8 +60,8 @@ const Home = ({ navigation }) => {
                     console.log(item.img)
                     return (
                         <TouchableOpacity style={styles.DivCategory}>
-                            <Image style={styles.ImgCategory} source={{ uri: item.img }}/>
-                            <Text   style={styles.NameCategory}>{item.name}</Text>
+                            <Image style={styles.ImgCategory} source={{ uri: item.img }} />
+                            <Text style={styles.NameCategory}>{item.name}</Text>
                         </TouchableOpacity>
                     )
                 }}
@@ -81,13 +81,13 @@ const Home = ({ navigation }) => {
                         {/* SearchBar */}
                         {RenderSearchBar()}
                         <View style={styles.SwipeElement}>
-                            <Text style={{ fontSize: SIZE.h2, fontWeight: 'bold' }}>Nos nouveautées</Text>
+                            <Text style={styles.title}>Nos nouveautées</Text>
                             <Text>Voir tous (5)</Text>
                         </View>
                         {/* Restaurant */}
                         {RenderRestaurant()}
                         <View style={styles.SwipeElement}>
-                            <Text>Categories</Text>
+                            <Text style={styles.title}>Categories</Text>
                             <Text>Voir tous (10)</Text>
                         </View>
                         {/* Category*/}
@@ -184,19 +184,19 @@ const styles = StyleSheet.create({
         height: 135,
     },
     ImgCategory: {
-        borderRadius:5,
-        flex:1,
+        borderRadius: 5,
+        flex: 1,
         marginRight: 10
     },
     NameCategory: {
         position: 'absolute',
         top: 55,
         left: 30,
-        color:COLORS.white,
-      
-        
+        color: COLORS.white,
+    },
+    title:
+    {
+        fontSize: SIZE.h2,
+        fontWeight: 'bold'
     }
-
-
-
 })
