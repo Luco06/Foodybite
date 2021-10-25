@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { View, Text, StyleSheet, FlatList, TextInput, Image } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Restaurant } from '../../data'
+import { Restaurant, FilterRestaurant } from '../../data'
 import MainBouton from '../Component/MainBouton'
 import { AuthProvider } from '../context/AuthContext'
 import { COLORS, icons, SIZE } from '../Theme'
@@ -46,9 +46,28 @@ const Home = ({ navigation }) => {
                         </TouchableOpacity>
                     )
                 }}
-
             />
         )
+    }
+    function RenderCategory() {
+        return (
+            <FlatList
+                data={FilterRestaurant}
+                horizontal
+                keyExtractor={item => `${item.id}`}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item }) => {
+                    console.log(item.img)
+                    return (
+                        <TouchableOpacity style={styles.DivCategory}>
+                            <Image style={styles.ImgCategory} source={{ uri: item.img }}/>
+                            <Text   style={styles.NameCategory}>{item.name}</Text>
+                        </TouchableOpacity>
+                    )
+                }}
+            />
+        )
+
     }
     //MainReturn
     return (
@@ -61,12 +80,18 @@ const Home = ({ navigation }) => {
                     <View>
                         {/* SearchBar */}
                         {RenderSearchBar()}
-                        <View style={{ flexDirection: 'row', width: '100%', paddingVertical: SIZE.padding, justifyContent: 'space-between', alignItems: 'center' }}>
+                        <View style={styles.SwipeElement}>
                             <Text style={{ fontSize: SIZE.h2, fontWeight: 'bold' }}>Nos nouveautées</Text>
                             <Text>Voir tous (5)</Text>
                         </View>
                         {/* Restaurant */}
                         {RenderRestaurant()}
+                        <View style={styles.SwipeElement}>
+                            <Text>Categories</Text>
+                            <Text>Voir tous (10)</Text>
+                        </View>
+                        {/* Category*/}
+                        {RenderCategory()}
                     </View>
                 }
                 ListFooterComponent={
@@ -110,7 +135,8 @@ const styles = StyleSheet.create({
     Divbtnresto: {
         width: 300,
         height: 250,
-        marginRight: SIZE.padding
+        marginRight: SIZE.padding,
+        marginBottom: 10
     },
     divLocalisation: {
         backgroundColor: COLORS.white,
@@ -127,7 +153,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: SIZE.padding,
         paddingTop: 5,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     vOpen: {
         backgroundColor: COLORS.white,
@@ -144,5 +170,33 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         flexDirection: 'row',
         alignItems: 'center'
+    },
+    SwipeElement:
+    {
+        flexDirection: 'row',
+        width: '100%',
+        paddingVertical: SIZE.padding,
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+    DivCategory: {
+        width: 123,
+        height: 135,
+    },
+    ImgCategory: {
+        borderRadius:5,
+        flex:1,
+        marginRight: 10
+    },
+    NameCategory: {
+        position: 'absolute',
+        top: 55,
+        left: 30,
+        color:COLORS.white,
+      
+        
     }
+
+
+
 })
