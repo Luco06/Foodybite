@@ -63,42 +63,42 @@ export const FilterRestaurant = [
 export const Friend = [
     {
         id: 1,
-        img: 'https://thispersondoesnotexist.com/image'
+        img: 'https://www.randomlists.com/img/people/manny_pacqui_o.jpg'
     },
     {
         id: 2,
-        img: 'https://thispersondoesnotexist.com/image'
+        img: 'https://www.randomlists.com/img/people/bob_marley.jpg'
     },
     {
         id: 3,
-        img: 'https://thispersondoesnotexist.com/image'
+        img: 'https://www.randomlists.com/img/people/lil_wayne.jpg'
     },
     {
         id: 4,
-        img: 'https://thispersondoesnotexist.com/image'
+        img: 'https://www.randomlists.com/img/people/stephen_king.jpg'
     },
     {
         id: 5,
-        img: 'https://thispersondoesnotexist.com/image'
+        img: 'https://www.randomlists.com/img/people/serena_williams.jpg'
     },
     {
         id: 6,
-        img: 'https://thispersondoesnotexist.com/image'
+        img: 'https://www.randomlists.com/img/people/sean_combs.jpg'
     },
     {
         id: 7,
-        img: 'https://thispersondoesnotexist.com/image'
+        img: 'https://www.randomlists.com/img/people/heidi_klum.jpg'
     },
     {
         id: 8,
-        img: 'https://thispersondoesnotexist.com/image'
+        img: 'https://www.randomlists.com/img/people/stephen_hawking.jpg'
     },
     {
         id: 9,
-        img: 'https://thispersondoesnotexist.com/image'
+        img: 'https://www.randomlists.com/img/people/madonna.jpg'
     },
     {
         id: 10,
-        img: 'https://thispersondoesnotexist.com/image'
+        img: 'https://www.randomlists.com/img/people/barack_obama.jpg'
     }
 ]
